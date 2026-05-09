@@ -4,27 +4,91 @@ import Hero from "../components/Hero.astro";
 import Services from "../components/Services.astro";
 import Gallery from "../components/Gallery.astro";
 import About from "../components/About.astro";
-import WorkProcess from "../components/WorkProcess.astro";
-import Coverage from "../components/Coverage.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+
+const siteUrl = "https://juanquindio.com";
+const ogImage = `${siteUrl}/logo.png`;
 ---
 
 <html lang="es-CO">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/fav-icon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Title & Description -->
+		<title>Juan Gabriel | Construcción y mantenimiento en Quindío</title>
 		<meta
 			name="description"
-			content="Trabajos de construcción, electricidad, mantenimiento, obra negra y obra blanca con atención directa y responsable."
+			content="Trabajos de construcción, electricidad, obra negra, obra blanca, remodelaciones y mantenimiento en Quindío. Atención directa por Juan Gabriel."
 		/>
-		<title>
-			Juan Quindío Construcciones | Construcción, electricidad y
-			mantenimiento
-		</title>
+
+		<!-- Canonical & robots -->
+		<link rel="canonical" href={siteUrl} />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Favicon -->
+		<link rel="icon" href="/fav-icon.png" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="es_CO" />
+		<meta property="og:url" content={siteUrl} />
+		<meta
+			property="og:title"
+			content="Juan Gabriel | Construcción y mantenimiento en Quindío"
+		/>
+		<meta
+			property="og:description"
+			content="Servicios de construcción, electricidad, obra negra, obra blanca, remodelaciones y mantenimiento en Quindío y alrededores."
+		/>
+		<meta property="og:image" content={ogImage} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Juan Gabriel | Construcción y mantenimiento en Quindío"
+		/>
+		<meta
+			name="twitter:description"
+			content="Trabajos de construcción, electricidad, remodelaciones y mantenimiento en Quindío."
+		/>
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- JSON-LD: Local Business structured data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "HomeAndConstructionBusiness",
+				"name": "Juan Quindío Construcciones",
+				"alternateName": "Juan Gabriel Construcciones",
+				"description": "Servicios independientes de construcción, electricidad, obra negra, obra blanca, remodelaciones y mantenimiento en Quindío y alrededores.",
+				"url": "https://juanquindio.com/",
+				"telephone": "+573136404735",
+				"image": "https://juanquindio.com/logo.png",
+				"priceRange": "$$",
+				"areaServed": [
+					"Armenia, Quindío",
+					"Calarcá, Quindío",
+					"Circasia, Quindío",
+					"La Tebaida, Quindío",
+					"Montenegro, Quindío",
+					"Quimbaya, Quindío",
+					"Salento, Quindío",
+					"Filandia, Quindío",
+					"Quindío, Colombia"
+				],
+				"address": {
+					"@type": "PostalAddress",
+					"addressRegion": "Quindío",
+					"addressCountry": "CO"
+				},
+				"sameAs": []
+			}
+		</script>
 	</head>
 	<body>
 		<Header />
