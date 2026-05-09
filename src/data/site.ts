@@ -1,12 +1,12 @@
 export const siteInfo = {
-  name: "Juan Quindío Construcciones",
-  shortName: "Juan Gabriel",
+  name: "Juan Martínez",
+  shortName: "Juan Martínez",
   serviceLabel: "Construcción y mantenimiento",
   phoneDisplay: "313 640 4735",
   phoneHref: "+573136404735",
   whatsappNumber: "573136404735",
   whatsappMessage:
-    "Hola Juan, quiero cotizar un trabajo de construcción o mantenimiento.",
+    "Hola Juan Martínez, quiero cotizar un trabajo de construcción o mantenimiento.",
 };
 
 export const navLinks = [
