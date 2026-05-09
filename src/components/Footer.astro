@@ -1,0 +1,54 @@
+---
+import { callUrl, navLinks, siteInfo, whatsappUrl } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" id="contacto">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <img
+        src="/logo.png"
+        alt=""
+        width="52"
+        height="52"
+        loading="lazy"
+        decoding="async"
+        aria-hidden="true"
+      />
+      <div>
+        <strong>{siteInfo.name}</strong>
+        <p>
+          Servicio independiente para construcción, electricidad y
+          mantenimiento.
+        </p>
+      </div>
+    </div>
+
+    <nav class="footer-nav" aria-label="Navegación secundaria">
+      {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <div class="site-footer__contact">
+      <p>¿Necesitas un arreglo o remodelación?</p>
+      <div class="site-footer__actions">
+        <a
+          class="button button--primary"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cotizar por WhatsApp
+        </a>
+        <a class="button button--ghost" href={callUrl}
+          >Llamar {siteInfo.phoneDisplay}</a
+        >
+      </div>
+    </div>
+
+    <p class="site-footer__fineprint">
+      © {year}
+      {siteInfo.shortName}. Atención directa y cotización según el trabajo.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,49 @@
+---
+import { whatsappUrl } from "../data/site";
+---
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <img
+    class="hero__media"
+    src="/logo.png"
+    alt=""
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    width="2000"
+    height="2000"
+  />
+
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Trabajo independiente y atención directa</p>
+      <h1 id="hero-title">
+        Servicios de construcción, electricidad y mantenimiento
+      </h1>
+      <p class="hero__lead">
+        Arreglos, remodelaciones, obra negra, obra blanca y mantenimiento
+        general para viviendas, locales y obras.
+      </p>
+
+      <div class="hero__actions" aria-label="Acciones principales">
+        <a
+          class="button button--primary"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Solicitar cotización
+        </a>
+        <a class="button button--secondary" href="#trabajos"
+          >Ver trabajos realizados</a
+        >
+      </div>
+
+      <ul class="hero__points" aria-label="Puntos clave del servicio">
+        <li>Servicio independiente</li>
+        <li>Cotización según el trabajo</li>
+        <li>Responsabilidad en cada entrega</li>
+      </ul>
+    </div>
+  </div>
+</section>

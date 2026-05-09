@@ -1,0 +1,82 @@
+---
+import ServiceIcon from "./ServiceIcon.astro";
+import { services } from "../data/services";
+---
+
+<section
+  id="servicios"
+  aria-labelledby="services-title"
+  class="overflow-hidden bg-[#f5f7f2] py-16 text-[#17212b] sm:py-20"
+>
+  <div
+    class="mx-auto w-[calc(100%_-_3rem)] max-w-[1180px] lg:w-[calc(100%_-_4rem)]"
+  >
+    <div class="max-w-3xl min-w-0">
+      <p class="text-sm font-extrabold uppercase text-[#c68102]">
+        Servicios principales
+      </p>
+      <h2
+        id="services-title"
+        class="mt-3 max-w-2xl break-words text-2xl font-extrabold leading-tight sm:text-4xl"
+      >
+        Trabajos claros para viviendas, locales y obras
+      </h2>
+      <p
+        class="mt-4 max-w-2xl break-words text-base leading-7 text-[#546170] sm:text-lg"
+      >
+        Cada trabajo se revisa según el estado del lugar, los materiales y el
+        tiempo necesario. La idea es cotizar de forma directa y sin vueltas.
+      </p>
+    </div>
+
+    <div
+      class="mt-12 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        services.map((service) => (
+          <article class="group relative flex min-h-[300px] w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[#17212b]/10 bg-white p-8 shadow-[0_8px_24px_rgba(7,28,63,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0c3d8f]/30 hover:shadow-[0_24px_54px_rgba(7,28,63,0.12)]">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-[#f3b51f]/[0.04] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              aria-hidden="true"
+            />
+
+            <div class="relative z-10 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0c3d8f] text-[#f3b51f] shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#17212b]">
+              <ServiceIcon name={service.icon} />
+            </div>
+
+            <h3 class="relative z-10 mt-6 break-words text-xl font-extrabold leading-snug text-[#17212b] transition-colors group-hover:text-[#0c3d8f]">
+              {service.title}
+            </h3>
+
+            <p class="relative z-10 mt-3 text-sm leading-relaxed text-[#546170]">
+              {service.description}
+            </p>
+
+            <div class="relative z-10 mt-auto pt-6">
+              <div class="h-px w-full bg-gradient-to-r from-[#17212b]/5 to-transparent mb-5" />
+              <ul class="grid min-w-0 gap-3 text-sm font-bold text-[#17212b]">
+                {service.items.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="mt-0.5 h-4 w-4 flex-none text-[#c68102]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    <span class="min-w-0 break-words">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
