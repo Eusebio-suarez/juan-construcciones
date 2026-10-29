@@ -9,7 +9,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
 const siteUrl = "https://juan-construcciones.vercel.app/";
-const ogImage = `${siteUrl}/fav-icon.png`;
+const ogImage = `${siteUrl}/og-image.webp`;
 ---
 
 <html lang="es-CO">
@@ -44,7 +44,7 @@ const ogImage = `${siteUrl}/fav-icon.png`;
 			property="og:description"
 			content="Servicios de construcción, electricidad, obra negra, obra blanca, remodelaciones y mantenimiento en Quindío y alrededores."
 		/>
-		<meta property="og:image" content={ogImage} />
+		<meta property="og:image" content={ogImage}/>
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -57,6 +57,7 @@ const ogImage = `${siteUrl}/fav-icon.png`;
 			content="Trabajos de construcción, electricidad, remodelaciones y mantenimiento en Quindío."
 		/>
 		<meta name="twitter:image" content={ogImage} />
+
 
 		<!-- JSON-LD: Local Business structured data -->
 		<script type="application/ld+json">
